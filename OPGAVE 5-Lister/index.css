@@ -37,6 +37,7 @@ header{
 
 #search:hover{
     transform:scale(1.2);
+    transition: ease-in-out;
 }
 
 .top, .bottom{
@@ -55,11 +56,12 @@ header{
     background-color: rgba(255, 0, 0, 0.897);
 }
 main{
-    
+    transition: ease-in-out;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 1rem;
     padding: 1rem;
+    height: 55vh;
 }
 
 body{

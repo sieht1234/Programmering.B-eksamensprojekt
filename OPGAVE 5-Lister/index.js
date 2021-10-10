@@ -50,7 +50,12 @@ search.addEventListener('input', () => {
     makeCards(results)
 })
 
-
+//function nameListPush(){
+  //  nameList.push(pusher.value);
+    //main.innerHTML = ''
+    //pusher.value = ''
+    //nameList.map(n => addCard(n))
+//}
 console.log(nameList.length)
 
 
