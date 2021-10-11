@@ -14,9 +14,10 @@ newElement.classList.add('blackjack')
 
 const makeCards = array => {
 
-    array.map( name=> {
+    array.map(( name, i)=> {
         let card = document.createElement('div')
         card.classList.add('card')
+        
     
         let top = document.createElement('div')
         top.classList.add('top')
@@ -35,10 +36,14 @@ const makeCards = array => {
         card.append(bottom)
         bottom.append(p)
     
-    
+        card.style.animation = 'anim';
+        card.style.animationDelay = i/40 +'s';
+        card.style.animationDuration = '.3s';
+
         main.append(card)
     
     } )
+
 }
 
 makeCards(nameList)

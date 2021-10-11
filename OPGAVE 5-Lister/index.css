@@ -17,6 +17,7 @@
     display: grid;
     overflow: hidden;
     box-shadow: 4px 4px 4px 2px rgba(0, 0,0, .3);
+    
 
 }
 
@@ -67,4 +68,11 @@ main{
 body{
     background-image: url(./assets/main.jpg);
 
+}
+
+@keyframes anim{
+    
+    to{
+        transform: rotate(1000turn);
+    }
 }
