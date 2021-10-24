@@ -33,6 +33,8 @@ let people = [person, {
 }]
 
 
+
+
 people.map(person =>{
     let nc =document.createElement('div')
     nc.classList.add('card')
@@ -50,3 +52,4 @@ people.map(person =>{
     document.querySelector('main').append(nc)
 })
 console.log('person 2s name is ' + people[1].name)
+
