@@ -17,5 +17,6 @@ const createCard = a  =>{
 }
 
 getActivity()
+//test
 
 document.querySelector('#fetch').addEventListener('click', getActivity)
