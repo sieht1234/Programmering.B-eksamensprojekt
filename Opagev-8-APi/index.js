@@ -14,6 +14,7 @@ const createCard = a  =>{
     document.querySelector('#acc').innerHTML = 'accessibility: '+a.accessibility
     document.querySelector('#price').innerHTML = 'price: '+a.price
     document.querySelector('#cat').innerHTML = 'type: '+ a.type
+    
 }
 
 getActivity()
