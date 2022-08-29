@@ -20,7 +20,9 @@ body {
       height: 5vh;
       width: 10vw;
   }
-  
+  #label{
+    width: 20vw;
+  }
   h1 {
     padding: 1rem; 
     text-align: center; 
@@ -68,6 +70,7 @@ body {
     text-align: center;
     transition: height .4s ease;
     display: grid;
+   margin: 0rem;
   }
   .slide1 {
  
@@ -107,6 +110,8 @@ body {
   main{
     display: grid;
     padding-right: 20rem;
+    
+    
 
    
   }
