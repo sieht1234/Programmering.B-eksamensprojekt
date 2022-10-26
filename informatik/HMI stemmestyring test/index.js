@@ -55,10 +55,10 @@ function gotResult(error, results) {
   console.log(results[0]);
   label = results[0].label;
   confidence = results[0].confidence
-  if (label == 'åben' && confidence > 0.70){
+  if (label == 'åben' && confidence > 0.60){
     getValue()
     }
-    if(label == 'luk' && confidence > 0.90){
+    if(label == 'luk' && confidence > 0.70){
         getValueClose()
     }
 }
