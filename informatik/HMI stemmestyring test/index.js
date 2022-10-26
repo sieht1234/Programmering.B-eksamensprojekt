@@ -19,11 +19,11 @@ function preload() {
 
 function getValue()
 {
-    var myWindow = window.open("http://www.safari.com", "_blank")
+    var myWindow = window.open("http://www.google.com", "_blank")
 }
 function getValueClose()
 {
-    var myWindowClose = window.close("http://www.safari.com", "_self")
+    var myWindowClose = window.close("http://www.google.com", "_self")
 }
 
 function setup() {
