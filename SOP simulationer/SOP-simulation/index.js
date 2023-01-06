@@ -38,7 +38,7 @@ class Circle{
         point(this.p.x, this.p.y)
     }
     move(){
-        //bruger p5js funktionen til at lægge vores parameter v med a
+        //bruger p5js funktionen add() til at lægge vores parameter v med a
         this.v.add(this.a)
         this.p.add(this.v)
     }
