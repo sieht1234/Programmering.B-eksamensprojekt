@@ -11,7 +11,7 @@
 </script>
 
 <main>
-	<h1>Hello customer and welcome to RON, if you have a suggestion to add to the menu please write below. Are you sure you want to add {name} to the menu?</h1>
+	<h1>Hello customer and welcome to RON, if you have a suggestion to add to the menu please write below. Are you sure you want to add ({name}) to the menu?</h1>
 	<input type = "text" bind:value={name}>
 	<button on:click={()=>{names = [...names, name];name = ''}}>add</button>
 	<p>Visit the <a href="https://www.betaktengstedt.dk/Home">referrence</a> to learn how to apply for a job at ron.</p>
