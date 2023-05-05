@@ -8,12 +8,12 @@
 	import MenuItem from "./components/MenuItem.svelte";
 	import Saved from "./components/Saved.svelte"
 	import Firebase from "./components/Firebase.svelte";
-	let menu = ['Frontpage','Browse', 'Search', 'Saved' ]
+	let menu = ['Frontpage','Browse', 'Search', 'Saved', 'Firebase' ]
 	let activePage = menu[1]
 	let q = 'everything'
 	let apiKey = '94189c26ebd6434da9f01da114b3e217'
 	let language 
-
+	let savedNews = []
 
 	
 	
@@ -54,8 +54,9 @@
 	{:else if  activePage == menu[2]}
 		<Search  bind:q={q} bind:language={language}/>
 	{:else if  activePage == menu[3]}
-		<Saved/>
-		<Firebase/>
+	<Saved bind:q={q} bind:language={language}/>
+	{:else if  activePage == menu[3]}
+		<Firebase bind:q={q} bind:language={language}/>
 
 	{/if}
 	
@@ -88,7 +89,7 @@
 		place-items: center;
 		padding: 1rem;
 		height: 10vh;
-		grid-template-columns: repeat(3, 1fr);
+		grid-template-columns: repeat(5, 1fr);
 		gap: 3rem;
 		
 	}

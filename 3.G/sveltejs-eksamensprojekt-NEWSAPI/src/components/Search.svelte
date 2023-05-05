@@ -83,6 +83,7 @@ let activeArticle = false
                 {#if news.length > 0}
                     {#each news as n}                    
                         <Article {n} bind:activeArticle={activeArticle}/>
+                        <button on:click={handleSaveToFirebase}>Gem til Firebase</button>                    
                     {/each}
             {:else}
                     <div class="load">
