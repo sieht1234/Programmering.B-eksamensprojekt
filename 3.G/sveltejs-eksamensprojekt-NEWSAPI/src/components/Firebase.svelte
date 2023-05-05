@@ -1,55 +1,28 @@
 <script>
-    import {onMount} from 'svelte'
-    import {db} from '../firebaseConfig'
-    
+    import * as firebase from 'firebase/app';
+    import Article from "./Article.svelte";
+    import firebaseConfig from '../firebaseConfig.js';
 
-    let articles = []
+    
     export let savedNews
 
-    const updateArticles = (snapshot) =>{
-        let newArticles = []
-
-        snapshot.forEach((childSnapshot)=>{
-
-            const article = childSnapshot.val()
-
-            newArticles.push(article)
-
-        })
-
-        articles = newArticles
-    }
-
-    onMount(()=>{
-        db.ref('articles').on('value', updateArticles)
-    })
-
-    //firebase.initializeApp(firebaseConfig);
-    //const db = firebase.database;
+    firebase.initializeApp(firebaseConfig);
+    const db = firebase.database;
     
-    //const newsRef = firebase.database().ref("news");
+    const newsRef = firebase.database().ref("news");
 
-    //newsRef.on("value", (snapshot) => {
-      //  savedNews = snapshot.val()
-   // })
+    newsRef.on("value", (snapshot) => {
+        savedNews = snapshot.val()
+    })
   
-        const handleRemoveFromFirebase = (articles)=>{
-            const articleRef = db.ref('articles/${article.id}')
 
-            articleRef.remove()
-
-            console.log('artikel er blevet fjernet fra firebase', article)
-        }
 
 </script>
 
 <main>
-    {#each articles as article}
+    {#each savedNews as s}
          <!-- content here -->
-         <h2>{Article.title}</h2>
-         <p>{article.description}</p>
-         <button on:click={()=> handleRemoveFromFirebase(article)}> fjern fra firebase</button>
-         
+         <Article {s}/>
          
     {/each}
 

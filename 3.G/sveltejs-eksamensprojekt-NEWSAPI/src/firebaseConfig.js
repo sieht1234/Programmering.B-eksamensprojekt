@@ -15,16 +15,5 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
 const database = getDatabase(app);
-const db = firebase.database();
 
-
-export const saveToFirebase = article =>{
-    const newArticleRef = db.ref('articles').push()
-
-    newArticleRef.set(article)
-
-    console.log('artikel gemt i firebase', article)
-}
-
-
-export default { app, analytics, database, db };
+export default { app, analytics, database };

@@ -7,19 +7,22 @@ export let q
 //Vi skal importere subkomponenten Article fra Article.svelte
 import Article from "./Article.svelte";
 //vi laver en variable 
+
+
+import firebase from '../firebaseConfig.js'
+import db from '../firebaseConfig'
+
+
 let errorMessage = ''
 let news = []
 let activeArticle = false 
 
-    const d = new Date()
-    let year = d.getFullYear() + '-'
-    let month = d.getMonth() + 1 
-    let date = d.getDate()
-    if (month < 10){
-        month = '0' + month + '-'
+    async function saveNews(news) {
+    await db.ref("news").set(news);
     }
+
+
     $:console.log(language)
-    console.log(date, month, year)
     $: console.log(q + 'is the query')
     $: if(q.length > 1){
             news = []
@@ -73,7 +76,7 @@ let activeArticle = false
         {#if news.length > 0}
              {#each news as n}                    
                 <Article {n} bind:activeArticle={activeArticle}/>
-                <button on:click={handleSaveToFirebase}>Gem til Firebase</button>    
+                <button on:click={()=>saveNews(news)}>Save News</button>
             {/each}
         {:else}
             <div class="load">

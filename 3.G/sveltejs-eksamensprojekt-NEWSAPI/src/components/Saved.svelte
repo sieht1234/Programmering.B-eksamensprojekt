@@ -13,7 +13,7 @@
     }
 
     async function saveNews() {
-    await firebase.ref("news").set(saveNew);
+        await firebase.ref("news").set(savedNews);
     }
 
 </script>
