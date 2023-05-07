@@ -111,13 +111,7 @@
 		font-weight: bold;
 		
 	}
-	#kina{
-		background-image: url(/assets/kina.svg);
-		background-repeat: no-repeat;
-		background-size: contain;
-		padding-left: 20px;
-		color: blue;
-	}
+	
 	
 	
 	
@@ -133,3 +127,4 @@
 		
 	}
 </style>
+
