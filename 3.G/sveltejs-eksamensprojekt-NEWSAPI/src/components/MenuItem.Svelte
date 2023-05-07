@@ -1,5 +1,7 @@
 <script>
+    //henter titlen 
     export let title
+    //henter variablen activePage
     export let activePage
  
 </script>

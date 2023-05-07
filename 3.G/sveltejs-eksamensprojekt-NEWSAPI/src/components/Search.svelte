@@ -11,7 +11,7 @@
     let news = []
     //laver variablen activeArticle og sætter den til false, når artiklerne skal vises
     let activeArticle = false 
-        
+        //
         const d = new Date()
         let year = d.getFullYear() + '-'
         let month = d.getMonth() + 1 

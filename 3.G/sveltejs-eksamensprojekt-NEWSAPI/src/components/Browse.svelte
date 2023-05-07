@@ -6,13 +6,11 @@
     export let q
     //Vi skal importere subkomponenten Article fra Article.svelte
     import Article from "./Article.svelte";
-    //vi laver en variable 
-    
-    
-    
-    
+    //vi laver en variable hvis vi får en fejl og ikke kan hente data
     let errorMessage = ''
+    //vi laver et tomt array til nyheder
     let news = []
+    //laver en variable til artiklerne der får klassen active nr de trykkes på og sætter den til at være falsk
     let activeArticle = false 
     
         $:console.log(language)
