@@ -21,15 +21,19 @@
     //det er meget kort tid hvor javascript og chrome kæmper efter klasserne, men med et timeout kan vi justere hvornår vi trkker active
     function scrollToTop() {
         if(active){
+            //hvis der sker noget i active så sætter vi active til at være falsk
             active = false
+            //vi sætter activearticle til falsk fordi artiklen skal ikke være stor mere
             activeArticle = false
             console.log('scroll back to ', whereWasI)
+            //sætter en timepout så web-appen har tid til at gå tilbage til hvor man var
             setTimeout(()=>{
                 window.scrollTo({
                     top: whereWasI,
                     behavior: 'smooth'    
                 })
             }, 2)
+            //hvis der ikke sker noget med active skal artiklen stadig være "stor"
         }else{
             whereWasI = y
             active = true
