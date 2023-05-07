@@ -3,17 +3,15 @@
 	import Article from "./components/Article.svelte";
 	import Browse from "./components/Browse.svelte";
 	import Frontpage from "./components/Frontpage.svelte";
-	import Language from "./components/Firebase.svelte";
 	import Search from "./components/Search.svelte";
 	import MenuItem from "./components/MenuItem.svelte";
-	import Saved from "./components/Saved.svelte"
-	import Firebase from "./components/Firebase.svelte";
-	let menu = ['Frontpage','Browse', 'Search', 'Saved', 'Firebase' ]
+	
+	let menu = ['Frontpage','Browse', 'Search']
 	let activePage = menu[1]
 	let q = 'everything'
 	let apiKey = '94189c26ebd6434da9f01da114b3e217'
 	let language 
-	let savedNews = []
+	
 
 	
 	
@@ -53,11 +51,6 @@
 		<Browse bind:q={q} bind:language={language}/>
 	{:else if  activePage == menu[2]}
 		<Search  bind:q={q} bind:language={language}/>
-	{:else if  activePage == menu[3]}
-	<Saved bind:q={q} bind:language={language}/>
-	{:else if  activePage == menu[3]}
-		<Firebase bind:q={q} bind:language={language}/>
-
 	{/if}
 	
 </main>
@@ -89,7 +82,7 @@
 		place-items: center;
 		padding: 1rem;
 		height: 10vh;
-		grid-template-columns: repeat(5, 1fr);
+		grid-template-columns: repeat(3, 1fr);
 		gap: 3rem;
 		
 	}

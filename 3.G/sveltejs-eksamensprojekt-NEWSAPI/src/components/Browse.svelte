@@ -9,8 +9,7 @@ import Article from "./Article.svelte";
 //vi laver en variable 
 
 
-import firebase from '../firebaseConfig.js'
-import db from '../firebaseConfig'
+
 
 
 let errorMessage = ''
@@ -76,7 +75,6 @@ let activeArticle = false
         {#if news.length > 0}
              {#each news as n}                    
                 <Article {n} bind:activeArticle={activeArticle}/>
-                <button on:click={()=>saveNews(news)}>Save News</button>
             {/each}
         {:else}
             <div class="load">
@@ -137,6 +135,7 @@ let activeArticle = false
     .load h2{
     margin-bottom: 2rem;
     color: rgb(215, 217, 219);
+    place-self: center;
    }
    select{
     border-radius: 1rem;
