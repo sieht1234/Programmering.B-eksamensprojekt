@@ -6,23 +6,22 @@ export let language
 export let q
 //Vi skal importere subkomponenten Article fra Article.svelte
 import Article from "./Article.svelte";
-//vi laver en variable 
-
-
-
-
-
+//vi laver en variable hvis vi får en fejl
 let errorMessage = ''
+//laver et array til vores nyheder, sp vi kan reffere til dette array senere
 let news = []
+//laver en variable til at tjekke hviklen artikel man ser på og sætter den til at være falsk
 let activeArticle = false 
+    
+    //async function saveNews(news) {
+    //await db.ref("news").set(news);
+    //}
 
-    async function saveNews(news) {
-    await db.ref("news").set(news);
-    }
-
-
+        //laver et reaktivt console log af vores variable langauge, som kaldes når language ændre sig
     $:console.log(language)
+    //vi gør det samme men med vores variable q (query/søgeresultat)
     $: console.log(q + 'is the query')
+    //vi laver vores rraktive fetch kald
     $: if(q.length > 1){
             news = []
             //&from=2023-02-28&to=${year}-${month}-${date}
